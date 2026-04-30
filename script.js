@@ -1,3 +1,4 @@
+/* JavaScript 邏輯保持不變，但 CSS 已經匹配了新主題 */
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -11,9 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.classList.toggle('is-active');
         const bars = hamburger.querySelectorAll('.bar');
         if (hamburger.classList.contains('is-active')) {
-            bars[0].style.transform = 'translateY(7px) rotate(45deg)';
+            bars[0].style.transform = 'translateY(9px) rotate(45deg)'; /* 厚度改變，偏移量微調 */
             bars[1].style.opacity = '0';
-            bars[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+            bars[2].style.transform = 'translateY(-9px) rotate(-45deg)';
         } else {
             bars[0].style.transform = 'none';
             bars[1].style.opacity = '1';
