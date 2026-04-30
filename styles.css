@@ -1,0 +1,283 @@
+/* 全域變數與字體設定 */
+:root {
+    --primary-color: #4A6572; /* 沉穩的莫蘭迪藍 */
+    --secondary-color: #D9B382; /* 溫暖的大地色 */
+    --bg-color: #FAFAFA; /* 乾淨的淺灰白背景 */
+    --text-main: #333333;
+    --text-light: #666666;
+    --white: #FFFFFF;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* 導覽列 (Navbar) */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 16px 24px;
+}
+
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.hamburger .bar {
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-main);
+    transition: var(--transition);
+}
+
+/* 共用區塊樣式 */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Hero 區塊 */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px; /* 避開導覽列 */
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 24px;
+}
+
+.hero-title span {
+    color: var(--primary-color);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* 關於我 (About) */
+.about-section {
+    background-color: var(--white);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.about-content p {
+    margin-bottom: 24px;
+}
+
+/* 聯絡資訊 (Contact) */
+.contact-section {
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.contact-text {
+    margin-bottom: 48px;
+    color: var(--text-light);
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.social-card {
+    background-color: var(--white);
+    padding: 32px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-main);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.social-detail {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+/* 頁尾 (Footer) */
+.footer {
+    text-align: center;
+    padding: 32px 0;
+    background-color: var(--white);
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* 響應式設計 (RWD) - 手機版設定 */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        flex-direction: column;
+        gap: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.4s ease-in-out;
+    }
+
+    .nav-menu.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .nav-link {
+        padding: 20px 24px;
+        display: block;
+        border-bottom: 1px solid #EEEEEE;
+    }
+
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        padding: 0 24px;
+    }
+
+    .contact-links {
+        grid-template-columns: 1fr;
+    }
+}
